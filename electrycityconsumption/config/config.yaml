@@ -1,0 +1,5 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  local_data_path: D:/Electricity-Consumption-Prediction/Dataset/Steel_industry_data.csv
