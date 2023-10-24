@@ -1,1 +1,8 @@
-key: val
+look_back: 10  
+num_lstm_units: 50 
+input_shape : [12,1] 
+epochs: 300  
+batch_size: 64  
+learning_rate: 0.001  
+loss_function: mean_squared_error  
+optimizer: adam  
