@@ -1,7 +1,7 @@
 look_back: 10  
 num_lstm_units: 50 
 input_shape : [32,14]  
-epochs: 300  
+epochs: 25  
 batch_size: 64  
 learning_rate: 0.001  
 loss_function: mean_squared_error  

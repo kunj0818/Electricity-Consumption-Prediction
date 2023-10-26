@@ -1,6 +1,6 @@
 from electrycityconsumption.constants.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from electrycityconsumption.utils.common import read_yaml, create_directories
-from electrycityconsumption.entity.config_entity import DataIngestionConfig,PrepareBaseModelConfig
+from electrycityconsumption.entity.config_entity import DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig
 from pathlib import Path
 
 
@@ -37,3 +37,24 @@ class ConfigurationManager:
         )
 
         return prepare_base_model_config
+    
+    def get_training_config(self) -> TrainingConfig:
+        training = self.config.training_model
+        prepare_base_model = self.config.prepare_base_model
+        params = self.params
+        training_data = Path(self.config.data_ingestion.local_data_path)
+       
+
+        training_config = TrainingConfig(
+            root_dir=Path(training.root_dir),
+            trained_model_path=Path(training.trained_model_path),
+            base_model_path=Path(prepare_base_model.base_model_path),
+            training_data= training_data,
+            params_epochs=params.EPOCHS,
+            params_batch_size=params.BATCH_SIZE,
+            params_loss_function=params.LOSS_FUNCTION,
+            params_optimizer=params.OPTIMIZER
+
+        )
+
+        return training_config
