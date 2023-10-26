@@ -8,8 +8,8 @@ class PrepareBaseModel:
     
     def create_lstm_model(self):
         model = tf.keras.models.Sequential()
-        model.add(tf.keras.layers.LSTM(50, input_shape=tuple(self.config.input_shape), return_sequences=True))
-        model.add(tf.keras.layers.LSTM(50, return_sequences=True))
+        model.add(tf.keras.layers.LSTM(32, input_shape=tuple(self.config.input_shape), return_sequences=True))
+        model.add(tf.keras.layers.LSTM(32, return_sequences=True))
         model.add(tf.keras.layers.Dense(1))
         model.compile(optimizer='adam', loss='mean_squared_error')
         self.save_model(path=self.config.base_model_path, model=model)
