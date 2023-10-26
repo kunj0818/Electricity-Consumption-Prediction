@@ -1,0 +1,22 @@
+stages:
+  data_ingestion:
+    cmd: python electrycityconsumption/pipeline/stage_one_data_ingestion.py
+    deps:
+      -electrycityconsumption/pipeline/stage_one_data_ingestion.py
+      -config/config.yaml
+    outs:
+      -artifacts/data_ingestion/
+  
+  prepare_base_model:
+    cmd: python electrycityconsumption/pipeline/stage_two_prepare_base_model.py
+    deps:
+      - electrycityconsumption/pipeline/stage_two_prepare_base_model.py
+      - config/config.yaml
+    params:
+      - LEARNING_RATE
+      - INPUT_SHAPE
+    outs:
+      - artifacts/prepare_base_model
+
+  
+  
