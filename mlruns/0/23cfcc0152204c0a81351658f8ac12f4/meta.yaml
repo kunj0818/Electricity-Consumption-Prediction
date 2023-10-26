@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Electricity-Consumption-Prediction/mlruns/0/23cfcc0152204c0a81351658f8ac12f4/artifacts
+end_time: 1698339647249
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 23cfcc0152204c0a81351658f8ac12f4
+run_name: rambunctious-gnu-502
+run_uuid: 23cfcc0152204c0a81351658f8ac12f4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698339610560
+status: 3
+tags: []
+user_id: Chetan Patel

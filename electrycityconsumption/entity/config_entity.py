@@ -25,3 +25,10 @@ class TrainingConfig:
     params_batch_size : int
     params_loss_function : str
     params_optimizer : str
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    training_data: Path
+    all_params: dict
+    mlflow_uri: str

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Electricity-Consumption-Prediction/mlruns/0/eaa96c27d1994a9ab21c6b4b17412c38/artifacts
+end_time: 1698340983632
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eaa96c27d1994a9ab21c6b4b17412c38
+run_name: orderly-asp-230
+run_uuid: eaa96c27d1994a9ab21c6b4b17412c38
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698340937266
+status: 3
+tags: []
+user_id: Chetan Patel

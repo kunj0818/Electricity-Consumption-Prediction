@@ -1,6 +1,6 @@
 from electrycityconsumption.constants.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from electrycityconsumption.utils.common import read_yaml, create_directories
-from electrycityconsumption.entity.config_entity import DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig
+from electrycityconsumption.utils.common import read_yaml, create_directories, save_json
+from electrycityconsumption.entity.config_entity import DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig,EvaluationConfig
 from pathlib import Path
 
 
@@ -58,3 +58,11 @@ class ConfigurationManager:
         )
 
         return training_config
+    def get_evaluation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model="artifacts/training/model.h5",
+            training_data="artifacts/data_ingestion/cleaned_data1.csv",
+            mlflow_uri="https://dagshub.com/kunj0818/Electricity-Consumption-Prediction.mlflow",
+            all_params=self.params
+        )
+        return eval_config
