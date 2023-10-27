@@ -1,4 +1,4 @@
-from electrycityconsumption.config_1.cofiguration import ConfigurationManager
+from electrycityconsumption.config_1.configuration import ConfigurationManager
 from electrycityconsumption.components.prepare_base_model import PrepareBaseModel
 from electrycityconsumption.electricity_consumption_prediction import logger_1
 

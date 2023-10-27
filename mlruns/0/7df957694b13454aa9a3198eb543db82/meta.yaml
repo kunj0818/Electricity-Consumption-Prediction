@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Electricity-Consumption-Prediction/mlruns/0/7df957694b13454aa9a3198eb543db82/artifacts
+end_time: 1698410624446
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7df957694b13454aa9a3198eb543db82
+run_name: merciful-rat-885
+run_uuid: 7df957694b13454aa9a3198eb543db82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698410557052
+status: 3
+tags: []
+user_id: Chetan Patel

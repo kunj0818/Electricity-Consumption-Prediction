@@ -1,4 +1,4 @@
-from electrycityconsumption.config_1.cofiguration import ConfigurationManager
+from electrycityconsumption.config_1.configuration import ConfigurationManager
 from electrycityconsumption.components.data_ingestion import DataIngestion
 from electrycityconsumption.electricity_consumption_prediction import logger_1
 

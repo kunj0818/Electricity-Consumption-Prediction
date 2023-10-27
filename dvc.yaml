@@ -2,21 +2,47 @@ stages:
   data_ingestion:
     cmd: python electrycityconsumption/pipeline/stage_one_data_ingestion.py
     deps:
-      -electrycityconsumption/pipeline/stage_one_data_ingestion.py
-      -config/config.yaml
+      - electrycityconsumption/pipeline/stage_one_data_ingestion.py
+      - electrycityconsumption/config/config.yaml
     outs:
-      -artifacts/data_ingestion/
-  
+      - artifacts/data_ingestion/
+
   prepare_base_model:
     cmd: python electrycityconsumption/pipeline/stage_two_prepare_base_model.py
     deps:
       - electrycityconsumption/pipeline/stage_two_prepare_base_model.py
-      - config/config.yaml
+      - electrycityconsumption/config/config.yaml
     params:
       - LEARNING_RATE
       - INPUT_SHAPE
     outs:
       - artifacts/prepare_base_model
 
-  
-  
+  training_model:
+    cmd: python electrycityconsumption/pipeline/stage_three_model_training.py
+    deps:
+      - electrycityconsumption/pipeline/stage_three_model_training.py
+      - electrycityconsumption/config/config.yaml
+      - artifacts/data_ingestion/
+      - artifacts/prepare_base_model
+    params:
+      - EPOCHS
+      - BATCH_SIZE
+      - LOSS_FUNCTION
+      - OPTIMIZER
+    outs:
+      - artifacts/training/model.h5
+
+  evaluation:
+    cmd: python electrycityconsumption/pipeline/stage_04_model_evaluation.py
+    deps:
+      - electrycityconsumption/pipeline/stage_04_model_evaluation.py
+      - electrycityconsumption/config/config.yaml
+      - artifacts/data_ingestion/cleaned_data1.csv
+      - artifacts/training/model.h5
+    params:
+      - all_params
+      - mlflow_uri
+    metrics:
+      - scores.json:
+          cache: false
